@@ -1,0 +1,53 @@
+{
+  "name": "world",
+  "children": [
+    {
+      "children": [
+        { "name": "China", "weight": 21.72 },
+        { "name": "United Arab Emirates", "weight": 7.65 },
+        { "name": "Other developing Asia and Oceania", "weight": 6.50 },
+        { "name": "India", "weight": 6.00 },
+        { "name": "Thailand", "weight": 2.64 },
+        { "name": "Viet Nam", "weight": 2.08 },
+        { "name": "Japan", "weight": 1.80 },
+        { "name": "Singapore", "weight": 1.27 },
+        { "name": "Republic of Korea", "weight": 1.12 },
+        { "name": "Other developed Asia and Oceania", "weight": 1.07 }
+      ],
+      "color": "#009EDB",
+      "name": "Asia and Oceania",
+      "text_color": "#fff"
+    },
+    {
+      "children": [
+        { "name": "European Union", "weight": 18.82 },
+        { "name": "Switzerland", "weight": 3.94 },
+        { "name": "United Kingdom", "weight": 2.50 },
+        { "name": "Other Europe", "weight": 1.29 }
+      ],
+      "color": "#FBAF17",
+      "name": "Europe",
+      "text_color": "#000"
+    },
+    {
+      "children": [
+        { "name": "United States", "weight": 8.14 },
+        { "name": "Canada", "weight": 1.67 },
+        { "name": "Latin America and the Caribbean", "weight": 1.15 }
+      ],
+      "color": "#004987",
+      "name": "America",
+      "text_color": "#fff"
+    },
+    {
+      "children": [
+        { "name": "Other Africa", "weight": 7.36 },
+        { "name": "South Africa", "weight": 1.92 },
+        { "name": "Ethiopia", "weight": 1.34 }
+      ],
+      "color": "#B06E2A",
+      "name": "Africa",
+      "text_color": "#000"
+    }
+  ]
+}
