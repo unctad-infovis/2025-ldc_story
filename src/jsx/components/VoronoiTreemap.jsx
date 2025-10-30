@@ -174,12 +174,11 @@ export default function VoronoiTreemap({ data }) {
         textElement.append('tspan')
           .attr('class', 'value-line')
           .attr('x', cx)
-          .attr('dy', `${lineHeight}px`)
+          .attr('dy', `${valueSize * 1}px`)
           .attr('fill', d_parent => d_parent.parent.data.text_color || '#000')
           .attr('font-size', valueSize)
           .attr('font-weight', 600)
           .attr('stroke', '#000')
-          .attr('stroke-width', d_parent => ((d_parent.parent.data.text_color === '#fff') ? 1 : 0)) // border thickness
           .attr('paint-order', 'stroke') // ensures stroke is drawn below fill
           .style('pointer-events', 'none') // text won't block pointer events
           .style('opacity', (d.data.weight > 5) ? 1 : 0)
@@ -195,12 +194,14 @@ export default function VoronoiTreemap({ data }) {
         polygon.transition().duration(200).style('opacity', 1);
         treemapG.selectAll('path.cell').filter(p => p !== d).transition().duration(200)
           .style('opacity', 0.7);
-        label.select('.value-line').transition().duration(200).style('opacity', 1);
+        label.select('.value-line').transition().duration(200).attr('stroke-width', d_parent => ((d_parent.parent.data.text_color === '#fff') ? 1 : 0))
+          .style('opacity', 1);
       };
 
       const hideValue = () => {
         treemapG.selectAll('path.cell').transition().duration(200).style('opacity', 1);
-        label.select('.value-line').transition().duration(200).style('opacity', (d.data.weight > 5 ? 1 : 0));
+        label.select('.value-line').transition().duration(200).attr('stroke-width', d_parent => ((d_parent.parent.data.text_color === '#fff') ? 0.5 : 0))
+          .style('opacity', (d.data.weight > 5 ? 1 : 0));
       };
 
       polygon.on('mouseenter', showValue).on('mouseleave', hideValue);
