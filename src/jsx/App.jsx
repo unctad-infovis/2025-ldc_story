@@ -13,7 +13,7 @@ function App() {
   const [data, setData] = useState(false);
 
   useEffect(() => {
-    const data_file = `${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2025-ldc_story/' : (window.location.href.includes('localhost:80')) ? './' : 'https://unctad-infovis.github.io/2025-ldc_story/'}assets/data/data.json`;
+    const data_file = `${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2025-ldc_story/' : (window.location.href.includes('localhost:80')) ? './' : 'https://unctad-infovis.github.io/2025-ldc_story/'}assets/data/data.json?v=1`;
     try {
       fetch(data_file)
         .then((response) => {

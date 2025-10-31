@@ -111,7 +111,7 @@ export default function VoronoiTreemap({ data }) {
     const weights = leaves.map(d => d.data.weight);
     const textScale = d3.scaleLinear()
       .domain([Math.min(...weights), Math.max(...weights)])
-      .range([Math.max(treemapRadius * 0.03, 7), Math.max(treemapRadius * 0.11, 15)])
+      .range([Math.max(treemapRadius * 0.03, 9), Math.max(treemapRadius * 0.11, 15)])
       .clamp(true);
 
     const valueScale = d3.scaleLinear()
@@ -120,7 +120,7 @@ export default function VoronoiTreemap({ data }) {
       .clamp(true);
 
     // Labels with hover-to-show value
-    const maxLineLength = 10; // max characters per line for name
+    const maxLineLength = 13; // max characters per line for name
     treemapG.selectAll('text.label')
       .data(leaves)
       .join('text')
@@ -158,7 +158,7 @@ export default function VoronoiTreemap({ data }) {
 
         textElement.selectAll('tspan').remove();
 
-        const totalLines = lines.length; // +1 for the hidden value line
+        const totalLines = lines.length + 0.5; // +1 for the hidden value line
         const lineHeight = fontSize * 1.2; // line spacing factor
         const offsetY = -((totalLines - 1) * lineHeight) / 2;
 
