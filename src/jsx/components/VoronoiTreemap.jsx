@@ -181,7 +181,7 @@ export default function VoronoiTreemap({ data }) {
           .attr('stroke', '#000')
           .attr('paint-order', 'stroke') // ensures stroke is drawn below fill
           .style('pointer-events', 'none') // text won't block pointer events
-          .style('opacity', (d.data.weight > 5) ? 1 : 0)
+          .style('opacity', (d.data.weight > 5 || width > 500) ? 1 : 0)
           .text(`${roundNr(d.data.weight, 1)}%`);
       });
 
@@ -201,7 +201,7 @@ export default function VoronoiTreemap({ data }) {
       const hideValue = () => {
         treemapG.selectAll('path.cell').transition().duration(200).style('opacity', 1);
         label.select('.value-line').transition().duration(200).attr('stroke-width', d_parent => ((d_parent.parent.data.text_color === '#fff') ? 0.5 : 0))
-          .style('opacity', (d.data.weight > 5 ? 1 : 0));
+          .style('opacity', (d.data.weight > 5 || width > 500) ? 1 : 0);
       };
 
       polygon.on('mouseenter', showValue).on('mouseleave', hideValue);
